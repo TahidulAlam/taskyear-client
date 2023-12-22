@@ -1,0 +1,15 @@
+.menu li > *:not(ul):not(.menu-title):not(details):active, .menu li > *:not(ul):not(.menu-title):not(details).active, .menu li > details > summary:active {
+    --tw-bg-opacity: 1;
+    background-color: #47B8C1;
+    --tw-text-opacity: 1;
+    color: white;
+}
+
+/* .menu li > *:not(ul):not(.menu-title):not(details):active,
+.menu li > *:not(ul):not(.menu-title):not(details).active, */
+.menu li > *:not(ul):not(.menu-title):not(details):hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 36, 39, 0.379);
+    --tw-text-opacity: 1;
+    color: #ffffff;
+}
