@@ -6,7 +6,7 @@ import logo from "../../assets/taskyear.png";
 import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, signInOut } = useAuth();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const handleSidebarToggle = () => {
     setIsSidebarOpen((prevState) => !prevState);
@@ -52,19 +52,20 @@ const Navbar = () => {
           " "
         )}
       </li>
-      <div className="hover:bg-transparent flex justify-center items-center gap-4">
+      {/* <div className="hover:bg-transparent flex justify-center items-center gap-4">
         <div>
           {user && user?.email ? (
-            <button className="btn bg-blue-700 text-white">Sign Out</button>
+            <button
+              className="btn bg-blue-700 text-white"
+              onClick={() => signInOut()}
+            >
+              Sign Out
+            </button>
           ) : (
             " "
           )}
-          {/* <Link to={"/signin"}>
-            <button className="btn btn-primary">Signin</button>
-          </Link> */}
         </div>
-        {/* <Switcher /> */}
-      </div>
+      </div> */}
     </>
   );
   return (

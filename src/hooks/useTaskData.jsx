@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import useAxiosPublic from "./useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "./useAuth";
 const useTaskData = () => {
+  // const [todo, setTodo] = useState([]);
+  // const [ongoing, setOngoing] = useState([]);
+  // const [complete, setComplete] = useState([]);
   const axios = useAxiosPublic();
   const { user } = useAuth();
   const getData = async () => {
@@ -11,6 +14,7 @@ const useTaskData = () => {
     const res = await axios.get(url);
     return res.data;
   };
+  // res.data
   const {
     data: taskData,
     isLoading,

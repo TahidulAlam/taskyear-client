@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Sidebar = () => {
-  const { user } = useAuth();
+  const { user, signInOut } = useAuth();
   const navLink = (
     <>
       <li className="text-blue-950 lg:hidden block">
@@ -46,19 +46,20 @@ const Sidebar = () => {
           " "
         )}
       </li>
-      <div className="hover:bg-transparent flex justify-center items-center gap-4">
+      {/* <div className="hover:bg-transparent flex justify-center items-center gap-4">
         <div>
           {user && user?.email ? (
-            <button className="btn bg-blue-700 text-white">Sign Out</button>
+            <button
+              className="btn bg-blue-700 text-white"
+              onClick={() => signInOut()}
+            >
+              Sign Out
+            </button>
           ) : (
             " "
           )}
-          {/* <Link to={"/signin"}>
-            <button className="btn btn-primary">Signin</button>
-          </Link> */}
         </div>
-        {/* <Switcher /> */}
-      </div>
+      </div> */}
     </>
   );
   return (

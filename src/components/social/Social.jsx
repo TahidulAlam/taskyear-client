@@ -43,7 +43,7 @@ const Social = () => {
           <div className="divider lg:divider-horizontal">OR</div>
           <button
             className="rounded-full hover:bg-slate-200 text-[#0000FF]  dark:hover:bg-slate-200"
-            //   onClick={() => handleSocialSignIn(signInWithGithub)}
+            onClick={() => handleSocialSignIn(signInWithGithub)}
           >
             <VscGithub className="text-5xl  rounded-full " />
           </button>

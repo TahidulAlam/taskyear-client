@@ -5,13 +5,14 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import logo from "../../assets/taskyear.png";
+import AddTask from "./dashboardHome/addtask/Addtask";
 const Dashboard = () => {
   const location = useLocation();
   const [showSidebar, setShowSidebar] = useState(window.innerWidth > 768);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(
     window.innerWidth <= 768
   );
-  const { user, logOut } = useAuth();
+  const { user, signInOut } = useAuth();
   useEffect(() => {
     const checkScreenSize = () => {
       const isMobile = window.innerWidth <= 768;
@@ -108,6 +109,9 @@ const Dashboard = () => {
                         Blog
                       </NavLink>
                     </li>
+                    <li className="py-2">
+                      <AddTask />
+                    </li>
 
                     {/* <NavLink
                       to={"/petlisting"}
@@ -124,7 +128,7 @@ const Dashboard = () => {
                   </ul>
                   <button
                     className="btn flex justify-center items-center gap-5 bg-blue-700 text-white rounded-lg  py-2"
-                    onClick={() => logOut()}
+                    onClick={() => signInOut()}
                   >
                     Sign Out <FaSignOutAlt />
                   </button>

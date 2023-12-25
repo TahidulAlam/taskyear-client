@@ -9,6 +9,8 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import DashBoardHome from "../pages/dashboard/dashboardHome/DashBoardHome";
 import About from "../pages/home/about/About";
 import Blogs from "../pages/home/blogs/Blogs";
+import PrivateRoute from "./PrivateRoute";
+import TaskBoard from "../pages/dashboard/dashboardHome/taskboard/TaskBoard";
 
 const Router = createBrowserRouter([
   {
@@ -39,11 +41,20 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
-        element: <DashBoardHome />,
+        element: (
+          <PrivateRoute>
+            {/* <DashBoardHome /> */}
+            <TaskBoard />
+          </PrivateRoute>
+        ),
       },
     ],
   },
